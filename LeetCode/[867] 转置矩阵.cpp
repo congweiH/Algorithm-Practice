@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-////////////// 以下是原答案 ///////////////////
+////////////// 以下是原答案 ////////////////
 
 class Solution {
 public:
