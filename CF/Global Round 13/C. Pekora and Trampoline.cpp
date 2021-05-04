@@ -45,7 +45,7 @@ int main(){
 			// 	if(i+j<=n)
 			// 		b[j]++;
 			// }
-			for(int j = i + 2; j <= min(n, i+s[i]); j++){ //这里为什么i+2, 而不是i+1,是因为s[i]=2才需要跳
+			for(int j = i + 2; j <= min(n, i+s[i]); j++){ //这里为什么i+2, 而不是i+1,是因为s[i]>=2才需要跳
 				b[j]++;
 			}
 		}
