@@ -1,35 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define int                 int64_t
-#define rep(i, a, b)        for(int (i) = (a); (i) <= (b); (i)++)
-#define pii                 pair<int, int>
+#define rep(i, a, b)        for(register int (i) = (a); (i) <= (b); (i)++)
+#define repd(i, b, a)       for(register int (i) = (b); (i) >= (a); (i)--)
+#define mset(a, x)          memset((a), (x), sizeof(a))
 
-/////////////////////// start code here ///////////////////////////
+typedef pair<int, int> pii;
+typedef long long ll;
 
+///////////////////////////   about  ///////////////////////////
+/*
+
+
+*/
+//////////////////////// start code here ///////////////////////
+
+const int mod = 1e9 + 7;
 const int maxn = 10000 + 10;
 
 int n;
 int a[maxn];
 
 void solve(){
-
-
+    
 
 
 }
 
-
-int32_t main(){
+int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
 
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
 
-    int t = 1;
-    // cin >> t;
-    while(t--) solve();
+    int T = 1;
+    // cin >> T;
+    rep(i, 1, T){
+        // cout << "Case #" << i << ": ";
+        solve();
+    }
 
     return 0;
 }
