@@ -25,24 +25,64 @@ template<typename T, typename... Args> void read(T &first, Args& ... args) {
     read(first);
     read(args...);
 }  // read end
+// print 打印
+
 ///////////////////////////////   ABOUT  ///////////////////////////
 /*
-
+- https://codeforces.com/problemset/problem/1519/B
 
 */
 ////////////////////////////// START CODE ///////////////////////
 
 #define int                 long long    // int 变成 long long
 const int mod = 1e9 + 7;
-const int maxn = 10000 + 10;
+const int maxn = 100 + 10;
+const int maxm = 100 + 10;
 
-int n, m;
+void print(int a[][maxn], int n, int m){ rep(i, 1, n){rep(j, 1, m){cout << a[i][j] << ' ';}cout << endl;}}
+
+int n, m, k;
+int a[maxn][maxm];
+int b[maxn][maxm];
 
 void solve(){
-
-
-
+    mset(a, 0);
+    mset(b, 0);
     
+    read(n, m, k);
+
+    rep(i, 1, n)    a[i][1] = i - 1;
+    rep(j, 1, m)    a[1][j] = j - 1;
+
+    rep(i, 2, n){
+        rep(j, 2, m){
+            a[i][j] = min(a[i-1][j] + j, a[i][j-1] + i);
+        }
+    }
+
+    // print(a, n, m);
+
+    rep(i, 1, n)    b[i][1] = i - 1;
+    rep(j, 1, m)    b[1][j] = j - 1;
+
+    rep(i, 2, n){
+        rep(j, 2, m){
+            b[i][j] = max(b[i-1][j] + j, b[i][j-1] + i);
+        }
+    }
+
+    // print(b, n, m);
+
+    // int res = (m - 1) + (n - 1) * min(n, m);
+    // debug(res);
+    // debug(a[n][m]);
+
+    if(a[n][m] == k){
+        cout << "YES" << endl;
+    }else{
+        cout << "NO" << endl;
+    }
+    // debug(b[n][m]);
 
 }
 
@@ -51,7 +91,7 @@ signed main(){
     // freopen("F:\\workspace\\Algorithm-Practice\\output.txt", "w", stdout);
 
     int T = 1;
-    // cin >> T;
+    cin >> T;
     rep(i, 1, T){
         // cout << "Case #" << i << ": ";
         solve();

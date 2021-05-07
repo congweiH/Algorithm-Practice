@@ -15,7 +15,7 @@ template <typename A, typename B>string to_string(pair<A, B> p);template <typena
 // 声明debug    不能打印普通数组, 自定义结构体
 void debug_out() { cerr << endl; }template <typename Head, typename... Tail>void debug_out(Head H, Tail... T) {  cerr << " " << to_string(H);  debug_out(T...);}
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
-// read  ---  只能输入整数数字(int , ll)
+// 声明read  ---  只能输入整数数字(int , ll)
 template<typename T> void read(T &x){
     x = 0;char ch = getchar();ll f = 1;
     while(!isdigit(ch)){if(ch == '-')f*=-1;ch=getchar();}
@@ -27,7 +27,7 @@ template<typename T, typename... Args> void read(T &first, Args& ... args) {
 }  // read end
 ///////////////////////////////   ABOUT  ///////////////////////////
 /*
-
+- https://codeforces.com/problemset/problem/1519/A
 
 */
 ////////////////////////////// START CODE ///////////////////////
@@ -36,24 +36,33 @@ template<typename T, typename... Args> void read(T &first, Args& ... args) {
 const int mod = 1e9 + 7;
 const int maxn = 10000 + 10;
 
-int n, m;
-
 void solve(){
 
+    int r, b, d;
+    read(r, b, d);
 
+    // debug(r, b, d);
 
-    
+    int minx = min(r, b);
+    int manx = max(r, b);
 
+    // debug(manx, minx);
+
+    if(manx <= minx * (d + 1)){
+        cout << "YES" << endl;
+    }else{
+        cout << "NO" << endl;
+    }
 }
 
 signed main(){
     // freopen("F:\\workspace\\Algorithm-Practice\\input.txt", "r", stdin);
-    // freopen("F:\\workspace\\Algorithm-Practice\\output.txt", "w", stdout);
+    // freopen("F:\workspace\Algorithm-Practice\output.txt", "w", stdout);
 
     int T = 1;
-    // cin >> T;
+    cin >> T;
     rep(i, 1, T){
-        // cout << "Case #" << i << ": ";
+        //cout << "Case #" << i << ": ";
         solve();
     }
 
